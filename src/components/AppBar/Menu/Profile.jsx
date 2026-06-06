@@ -43,7 +43,7 @@ function Profile() {
             aria-expanded={open}
           >
         <Avatar
-         sx={{ width: 30, height: 30 }}
+         sx={{ width: 34, height: 34 }}
          src=""
          alt="NgTDat"
          />

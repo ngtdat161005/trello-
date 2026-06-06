@@ -1,11 +1,4 @@
-import Button from '@mui/material/Button'
-import AccessAlarmIcon from '@mui/icons-material/AccessAlarm'
-import ThreeDRotation from '@mui/icons-material/ThreeDRotation'
-import HomeIcon from '@mui/icons-material/Home'
-import { pink } from '@mui/material/colors'
-import  Typography  from '@mui/material/Typography'
 import { useColorScheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
@@ -28,7 +21,7 @@ import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
   };
 
   return (
-    <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+    <FormControl size="small" sx={{minWidth: '120px'}}>
       <InputLabel id="label-select-dark-light-mode">Mode</InputLabel>
       <Select
         labelId="label-select-dark-light-mode"
@@ -38,16 +31,16 @@ import SettingsBrightnessIcon from '@mui/icons-material/SettingsBrightness'
         onChange={handleChange}
       >
         <MenuItem value="light">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <LightModeIcon fontSize="small" />
           Light 
-        </div>
+        </Box>
         </MenuItem>
         <MenuItem value="dark">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <DarkModeOutlinedIcon fontSize="small" />
           Dark
-        </div>
+        </Box>
         </MenuItem>
         <MenuItem value="system">
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>

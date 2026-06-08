@@ -30,6 +30,7 @@ function Templates() {
   return (
     <Box>
       <Button
+        sx={{ color: 'white' }}
         id={templatesButtonId}
         aria-controls={open ? templatesMenuId : undefined}
         aria-haspopup="true"

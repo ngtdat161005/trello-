@@ -34,6 +34,7 @@ function Workspaces() {
   return (
     <Box>
       <Button
+        sx={{ color: 'white' }}
         id={workspaceButtonId}
         aria-controls={open ? workspaceMenuId : undefined}
         aria-haspopup="true"

@@ -30,6 +30,7 @@ function Recent() {
   return (
     <Box>
       <Button
+        sx={{ color: 'white' }}
         id={recentButtonId}
         aria-controls={open ? recentMenuId : undefined}
         aria-haspopup="true"

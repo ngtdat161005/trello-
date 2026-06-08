@@ -44,7 +44,7 @@ function Profile() {
           >
         <Avatar
          sx={{ width: 34, height: 34 }}
-         src=""
+         src="https://th.bing.com/th/id/OVP.NId95B3duAPCs5DthsMG4QHgFo?w=243&h=136&c=7&rs=1&qlt=70&o=7&dpr=2&pid=2.1&rm=3"
          alt="NgTDat"
          />
           </IconButton>
@@ -62,12 +62,12 @@ function Profile() {
         }}
       >
         <MenuItem >
-          <Avatar sx={{ width: 25, height: 25, mr: 2 }} src="" alt="NgTDat" />
+          <Avatar sx={{ width: 25, height: 25, mr: 2 }} src="https://th.bing.com/th/id/OVP.NId95B3duAPCs5DthsMG4QHgFo?w=243&h=136&c=7&rs=1&qlt=70&o=7&dpr=2&pid=2.1&rm=3" alt="NgTDat" />
           Profile
         </MenuItem>
 
         <MenuItem >
-          <Avatar sx={{ width: 25, height: 25, mr: 2 }} src="" alt="NgTDat" />
+          <Avatar sx={{ width: 25, height: 25, mr: 2 }} src="https://th.bing.com/th/id/OVP.NId95B3duAPCs5DthsMG4QHgFo?w=243&h=136&c=7&rs=1&qlt=70&o=7&dpr=2&pid=2.1&rm=3" alt="NgTDat" />
           My account
         </MenuItem>
 

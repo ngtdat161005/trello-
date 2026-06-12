@@ -1,10 +1,10 @@
 import Box from '@mui/material/Box'
 import React from 'react'
-import Columns from './Columns/Columns'
+import Column from './Columns/Column'
 import  Button  from '@mui/material/Button'
 import NoteAddIcon from '@mui/icons-material/NoteAdd'
 
-function ListColumns() {
+function ListColumns({ columns }) {
 
 	return (
 		<Box sx={{
@@ -16,10 +16,8 @@ function ListColumns() {
 			overflowY: 'hidden',
 			'&::-webkit-scrollbar-track':{ m: 2 }
 		}}>
+		{columns?.map(column =>  <Column key={column._id} column={column} />)}
 
-		<Columns />
-		<Columns />
-		<Columns />
 		{/*add new column */}
 		<Box sx={{
 			minWidth: '200px',

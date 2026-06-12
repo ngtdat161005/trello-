@@ -18,9 +18,25 @@ import AddCardIcon from '@mui/icons-material/AddCard'
 import DragHandleIcon from '@mui/icons-material/DragHandle'
 import ListCards from './ListCards/ListCards'
 import {mapOrder} from '~/utils/sorts'
-
+import {useSortable} from '@dnd-kit/sortable'
+import {CSS} from '@dnd-kit/utilities'
 
 function Column( {column}) {
+
+  const {attributes, listeners, setNodeRef, transform, transition} =
+    useSortable({
+			id: column._id,
+			data: { ...column }
+		})
+  const dndKitColumnStyles = {
+		// touchAction: 'none', 
+		//dùng transform thì bị lỗi stretched
+		//https://github.com/clauderic/dnd-kit/issues/117
+		// transform: CSS.Transform.toString(transform),	
+    transform: CSS.Translate.toString(transform),
+    transition,
+  }
+
 	const orderedCards = mapOrder(column?.cards, column?.cardOrderIds, '_id')
 	
   const id = React.useId()
@@ -31,15 +47,21 @@ function Column( {column}) {
   const handleClick = (event) => {setAnchorEl(event.currentTarget)}
   const handleClose = () => {setAnchorEl(null)}
 	return (
-	  <Box sx={{
-		minWidth: '300px',
-		maxWidth: '300px',
-		backgroundColor : (theme) => (theme.palette.mode === 'light' ? '#ebecf0' : '#333643'),
-		ml: 2,
-		borderRadius: '6px',
-		height: 'fit-content',
-		maxHeight: (theme) => `calc(${theme.trello.boardContentHeight} - ${theme.spacing(5)})`
-		}}>
+	  <Box 
+			ref = {setNodeRef}
+			style = {dndKitColumnStyles}
+			{...attributes}
+			{...listeners}
+			sx={{
+				minWidth: '300px',
+				maxWidth: '300px',
+				backgroundColor : (theme) => (theme.palette.mode === 'light' ? '#ebecf0' : '#333643'),
+				ml: 2,
+				borderRadius: '6px',
+				height: 'fit-content',
+				maxHeight: (theme) => `calc(${theme.trello.boardContentHeight} - ${theme.spacing(5)})`
+			}}
+		>
 		{/*Box column header*/}
 		<Box sx={{
 			height: (theme) => theme.trello.columnHeaderHeight,
